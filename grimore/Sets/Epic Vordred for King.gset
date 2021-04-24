@@ -1,0 +1,25 @@
+Helmet:
+he file:items/helms/VordredPkgHelmr1.swf
+he link:VordredPkgHelm
+
+Armor:
+co file:VordredPkgr2.swf
+co link:VordredPkg
+
+Class:
+ar file:
+ar link:
+
+
+Weapon:
+Weapon file:items/swords/VordredPkgSword.swf
+Weapon link:VordredPkgSword
+
+
+Pet:
+pe file:
+pe link:
+
+Cape:
+ba file:items/capes/VordredPkgCape1.swf
+ba link:VordredPkgCape1
