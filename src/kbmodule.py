@@ -1,19 +1,36 @@
 import keyboard
 import time
+import subprocess
+import sys
+import getopt
 
-"""
-Ez meg csak egy teszt, hogy mukodik e. Es ugytunik, hogy mukodik.
-"""
-def main():
-    while True:
-        keyboard.send("2")
-        time.sleep(1)
-        keyboard.send("3")      
-        time.sleep(1)
-        keyboard.send("4")
-        time.sleep(1)
-        if keyboard.is_pressed("esc"):
-            break
+class Klassz(object):
+    nev = ""
+    kepessegek = []
+    skillrotation = []
+
+    def __init__(self, nev):
+        self.nev = nev
+
+    def skill_rotation(self, rotation, intervallumok):
+        for i in range(rotation):
+            self.skillrotation.append(rotation[i])
+            self.skillrotation.append(intervallumok[i])
+
+
+def interface(klasszok):
+    print("Classok:")
+    for i in range(klasszok):
+        print(f"{i+1}. {klasszok[i]}")
+    chosen = input("Klassz szama: ")
+    return klasszok[chosen]
+
+def main(argv):
+    if len(argv) != 1:
+        print("Csak az eleresi utat ird be!")
+        sys.exit(1)
+    pathname = argv[0]
+    klasszok =[]
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1:])
