@@ -1,8 +1,8 @@
 import keyboard
 import time
 import subprocess
-import sys
-import getopt
+# TODO: Maybe can implement pyautogui elements to the app aswell!
+#import pyautogui
 
 class Klassz(object):
     nev = ""
@@ -42,7 +42,7 @@ def interface(klasszok):
     for i in range(len(klasszok)):
         print(f"{i+1}. {klasszok[i].nev}")
     chosen = int(input("Klassz szama: ")) - 1
-    print(f"Grind starts with {klasszok[chosen].nev}")
+    print(f"Starting...")
     return klasszok[chosen]
 
 
@@ -67,10 +67,14 @@ def do_rotation(Klassz):
 
 
 def main():
-    Klasszok = []
-    Klasszok.append(Klassz("Infinite Legion Dark Caster", [4, 5, 3], 2, 3))
-    Klasszok.append(Klassz("Blaze Binder", [2, 3, 5], 4, 2))
-    do_rotation(interface(Klasszok))
+    print("Press Ctrl-C to EXIT.")
+    try:
+        Klasszok = []
+        Klasszok.append(Klassz("Infinite Legion Dark Caster", [4, 5, 3], 2, 3))
+        Klasszok.append(Klassz("Blaze Binder", [2, 3, 5], 4, 2))
+        do_rotation(interface(Klasszok))
+    except KeyboardInterrupt:
+        print("\nExiting...")
 
 
 if __name__ == "__main__":
